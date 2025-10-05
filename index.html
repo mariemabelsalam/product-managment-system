@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product managment system</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <main>
+        <section class="section-one my-5">
+            <div class="container">
+                <div class="head text-center text-white">
+                    <h1 class="mb-0">Product Managment Syetem</h1>
+                </div>
+                <div>
+                    <div>
+                        <label for="productTitle" class="form-label"></label>
+                        <input type="text" class="form-control bg-black text-white border-0" id="productTitle"
+                            oninput="validation(this ,titleMsg )" autocomplete="off" placeholder="Title">
+                        <p class="alert alert-danger d-none fw-medium mt-1" id="titleMsg">
+                            title must contain at least 2 words and not more than 20 words
+                        </p>
+                    </div>
+                    <div>
+                        <label for="productPrice" class="form-label"></label>
+                        <input type="number"  autocomplete="off" class="form-control bg-black text-white border-0" id="productPrice"
+                            oninput="validation(this , priceMsg)" placeholder="Price">
+                        <p class="alert alert-danger d-none fw-medium mt-1" id="priceMsg">
+                            price must be a valid number decimal allowed
+                        </p>
+                    </div>
+                    <div>
+                        <label for="productCategory" class="form-label"></label>
+                        <input class="form-control bg-black text-white border-0" list="datalistOptions"
+                            oninput="validation(this , categoryMsg)" id="productCategory" placeholder="Category">
+                        <p class="alert alert-danger d-none fw-medium mt-1" id="categoryMsg">
+                            category must be one of the following:phones,Ipads,Smart Watches,Electronic
+                            ,Labtops,Tablets and Tv
+                        </p>
+                        <datalist id="datalistOptions">
+                            <option value="Phones"></option>
+                            <option value="Ipads"></option>
+                            <option value="Smart Watches"></option>
+                            <option value="Electronic"></option>
+                            <option value="Labtops"></option>
+                            <option value="Tablets"></option>
+                            <option value="Tv"></option>
+                        </datalist>
+                    </div>
+                    <div class="create-btn mt-3">
+                        <button class="w-100 rounded-pill text-white border-0 py-1" id="create" onclick="addProduct()">
+                            Create
+                        </button>
+                        <div class="update-btn">
+                            <button class="w-100 rounded-pill text-white border-0 py-1 d-none" id="update"
+                                onclick="updateProduct()">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="search" class="form-label"></label>
+                        <input oninput="searchProduct()" type="search" class="form-control bg-black text-white border-0"
+                            id="search" placeholder="Search by title">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-two">
+            <div class="container">
+                <table class="text-white table text-center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                            <th>PRICE</th>
+                            <th>CATEGORY</th>
+                            <th>UPDATE</th>
+                            <th>DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="items">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

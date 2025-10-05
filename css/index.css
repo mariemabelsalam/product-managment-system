@@ -1,0 +1,39 @@
+body {
+  background-color: #222222;
+}
+.form-control {
+  transition: all 1s;
+}
+.form-control::placeholder {
+  color: white;
+  opacity: 1;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.form-control:focus {
+  transform: scale(1.05);
+}
+.create-btn button {
+  background-color: #115421;
+}
+.delete-btn button,
+.delete-btn button,
+.btn:hover {
+  background-color: #dc3545;
+}
+.update-btn button,
+.update-btn .btn:hover {
+  background-color: #ffc107;
+}
+
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: white;
+}
+
+@media (max-width: 767px) {
+  table {
+    font-size: 14px;
+  }
+}
